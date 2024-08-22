@@ -1,0 +1,5 @@
+.Error-message {
+  height: 20px;
+  display: inline-block;
+  color: red; /* This replaces the `text-danger` class */
+}
