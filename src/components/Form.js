@@ -112,9 +112,7 @@ const Form = () => {
     }
   }
   return (
-    <div
-      className="row justify-content-center align-items-center mt-5"
-    >
+    <div className="row justify-content-center align-items-center mt-5">
       <div
         className="d-flex col-md-8 pt-5 px-4"
         style={{
@@ -123,12 +121,15 @@ const Form = () => {
           borderRadius: "15px",
         }}
       >
-        <div className="col-md-6 p-5" style={{ backgroundColor: "#3087D6" }}>
+        <div
+          className="col-md-6 p-5"
+          style={{ backgroundColor: "#3087D6" }}
+        >
           <div className="container mt-5">
             <img src={Logo} alt="" height={"50px"} />
             <h6 className="text-white">STUDIO</h6>
           </div>
-          <div className="container mt-5">
+          <div className="container mt-5 d-none d-md-block">
             <p className="text-white mt-5">
               Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
@@ -143,7 +144,12 @@ const Form = () => {
               <button
                 className="btn mx-4"
                 type="submit"
-                style={{ backgroundColor: "#5742A0", color: "white",padding:"10px 35px",borderRadius:"25px" }}
+                style={{
+                  backgroundColor: "#5742A0",
+                  color: "white",
+                  padding: "10px 35px",
+                  borderRadius: "25px",
+                }}
               >
                 Login
               </button>
@@ -203,14 +209,11 @@ const Form = () => {
                 onChange={handleChange}
               />
             </div>
-            <span
-              className="error-message"
-              style={{ float: "left", height: "20px" }}
-            >
+            <p className="errorMessage" style={{ float: "left" }}>
               {errors.firstName}
-            </span>
+            </p>
           </div>
-          <div className="form-group col-md mt-3">
+          <div className="form-group col-md mt-2">
             <div className="input-group">
               <span className="input-group-text">
                 <FontAwesomeIcon icon={faCircleUser} color="grey" />
@@ -225,12 +228,9 @@ const Form = () => {
                 onChange={handleChange}
               />
             </div>
-            <span
-              className="error-message"
-              style={{ float: "left", height: "20px" }}
-            >
+            <p className="errorMessage" style={{ float: "left" }}>
               {errors.lastName}
-            </span>
+            </p>
           </div>
           <div className="form-floating col-md mt-2">
             <div className="input-group">
@@ -247,10 +247,7 @@ const Form = () => {
                 onChange={handleChange}
               />
             </div>
-            <span
-              className="error-message"
-              style={{ float: "left" }}
-            >
+            <span className="errorMessage" style={{ float: "left" }}>
               {errors.email}
             </span>
           </div>
@@ -270,7 +267,7 @@ const Form = () => {
               />
             </div>
             <span
-              className="error-message"
+              className="errorMessage"
               style={{ float: "left", height: "20px" }}
             >
               {errors.userName}
@@ -293,7 +290,7 @@ const Form = () => {
               />
             </div>
             <span
-              className="error-message"
+              className="errorMessage"
               style={{ float: "left", height: "20px" }}
             >
               {errors.password}
@@ -315,14 +312,15 @@ const Form = () => {
               />
             </div>
             <span
-              className="error-message"
+              className="errorMessage"
               style={{ float: "left", height: "20px" }}
             >
               {errors.confirmPassword}
             </span>
           </div>
           <div className="col-md mt-5">
-            <a className='mt-3'
+            <a
+              className="mt-3"
               href="./"
               target=""
               style={{
@@ -334,9 +332,14 @@ const Form = () => {
               Already a member? SignIn
             </a>
             <button
-              className="btn text-white fs-5"
+              className="btn text-white fs-5 btn-pri"
               type="submit"
-              style={{ backgroundColor: "#5742A0", float: "right",padding: "10px 45px",borderRadius:"25px" }}
+              style={{
+                backgroundColor: "#5742A0",
+                float: "right",
+                padding: "10px 45px",
+                borderRadius: "25px",
+              }}
             >
               Sign up
             </button>

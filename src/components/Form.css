@@ -1,5 +1,61 @@
-.Error-message {
-  height: 20px;
-  display: inline-block;
+.errorMessage {
+  /* margin-bottom: 40px !important; */
+  position: absolute !important;
+  display: block !important;
+  font-size: 14px !important;
   color: red; /* This replaces the `text-danger` class */
+}
+.form-control{
+  margin-top: 15px !important;
+  height: 30px !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+.input-group-text{
+  margin-top: 15px !important;
+  border-top-left-radius: 10px !important;
+  border-right: none !important ;
+  border-bottom-left-radius: 10px !important;
+}
+.row{
+  width: 40.8cm !important;
+}
+@media screen and (max-width : 500px) {
+  .row{
+    width: 10cm !important;
+    
+  }
+  .pt-5{
+    padding-top: 10px !important;
+  }
+  .p-5{
+    padding: 0px !important;
+    margin-left: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .pb-5{
+    padding-bottom: 20px !important;
+  }
+  .d-flex{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .col-md-8{
+    width: 10cm !important;
+  }
+  .form-control{
+    height: 40px !important;
+  }
+  .mt-5{
+    margin-top: 20px !important;
+  }
+  .px-5{
+    padding-left: 10px !important ;
+    padding-right: 10px !important;
+  }
+  .btn-pri{
+    float:  left !important;
+    margin-top: 10px !important;
+    padding: 10px 80px !important;
+  }
 }
