@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Logo from './assets/logo.jpeg';
+import Lock from './assets/clock-padlock.png';
+import Clock from './assets/lock.png';
 import './Form.css';
 import {
   faCircleUser,
   faEnvelope,
-  faLock,
 } from "@fortawesome/free-solid-svg-icons";
 import {faFacebook, faGooglePlus, faTwitter} from '@fortawesome/free-brands-svg-icons'
 const Form = () => {
@@ -112,239 +113,246 @@ const Form = () => {
     }
   }
   return (
-    <div className="row justify-content-center align-items-center mt-5">
-      <div
-        className="d-flex col-md-8 pt-5 px-4"
-        style={{
-          boxShadow: "5px 5px 5px ",
-          backgroundColor: "#3087D6",
-          borderRadius: "15px",
-        }}
-      >
+    <div>
+      <div className="row justify-content-center align-items-center mt-5 mx-auto">
         <div
-          className="col-md-6 p-5"
-          style={{ backgroundColor: "#3087D6" }}
+          className="d-flex col-md-8 pt-5 px-4"
+          style={{
+            boxShadow: "5px 5px 5px ",
+            backgroundColor: "#3087D6",
+            borderRadius: "15px",
+          }}
         >
-          <div className="container mt-5">
-            <img src={Logo} alt="" height={"50px"} />
-            <h6 className="text-white">STUDIO</h6>
-          </div>
-          <div className="container mt-5 d-none d-md-block">
-            <p className="text-white mt-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing.
-            </p>
-            <div>
-              <button
-                className="btn"
-                type="button"
-                style={{ color: "white", backgroundColor: "transparent" }}
+          <div className="col-md-6 p-5" style={{ backgroundColor: "#3087D6" }}>
+            <div className="container mt-5">
+              <img src={Logo} alt="" height={"50px"} />
+              <h6 className="text-white">STUDIO</h6>
+            </div>
+            <div className="container mt-5 d-none d-md-block">
+              <p className="text-white mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <div className=' justify-items-center'>
+                <button
+                  className="btn btn-reg mb-3"
+                  type="button"
+                  style={{
+                    color: "white",
+                    borderColor: "#68B2E6",
+                    padding: "10px 25px",
+                    borderRadius: "25px",
+      
+                  }}
+                >
+                  Register
+                </button>
+                <button
+                  className="btn mx-auto btn-sig"
+                  type="submit"
+                  style={{
+                    backgroundColor: "#5742A0",
+                    color: "white",
+                    padding: "10px 35px",
+                    borderRadius: "25px",
+                  }}
+                >
+                  Login
+                </button>
+              </div>
+              <div
+                className="container mt-5"
+                style={{ borderBlockStartColor: "White" }}
               >
+                <div className="mt-5 text-white">
+                  <p className="text-white"> ----------Sign up with---------</p>
+                </div>
+                <span className="text-white fs-4">
+                  <FontAwesomeIcon icon={faGooglePlus} />
+                </span>
+                <span className="mx-3 text-white fs-4">
+                  <FontAwesomeIcon icon={faFacebook} />
+                </span>
+                <span className="text-white fs-4">
+                  <FontAwesomeIcon icon={faTwitter} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <form
+            action=""
+            className="col-md-6 pb-5 pb-md-4 px-3"
+            onSubmit={handleSubmit}
+            style={{
+              backgroundColor: "#B6D9EC",
+              borderTopLeftRadius: "15px",
+              borderTopRightRadius: "15px",
+            }}
+          >
+            <div className="col-md">
+              <h1 className="" style={{ float: "left", color: "#6988AF" }}>
                 Register
-              </button>
+              </h1>
+              <p className="" style={{ float: "left", color: "#6988AF" }}>
+                Create your account.It's free and only take a minute
+              </p>
+            </div>
+            <div className="form-group col-md">
+              <div className="input-group">
+                <span className="input-group-text">
+                  <FontAwesomeIcon icon={faCircleUser} color="#EDEDED" />
+                </span>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="firstName"
+                  placeholder="Enter Your First Name"
+                  id="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                />
+              </div>
+              <p className="errorMessage" style={{ float: "left" }}>
+                {errors.firstName}
+              </p>
+            </div>
+            <div className="form-group col-md mt-2">
+              <div className="input-group">
+                <span className="input-group-text">
+                  <FontAwesomeIcon icon={faCircleUser} color="#EDEDED" />
+                </span>
+                <input
+                  className="form-control"
+                  placeholder="Enter your Last name"
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                />
+              </div>
+              <p className="errorMessage" style={{ float: "left" }}>
+                {errors.lastName}
+              </p>
+            </div>
+            <div className="form-floating col-md mt-2">
+              <div className="input-group">
+                <span className="input-group-text">
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    style={{ color: "#959DB2" }}
+                  />
+                </span>
+                <input
+                  className="form-control"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="name@gmail.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <span className="errorMessage" style={{ float: "left" }}>
+                {errors.email}
+              </span>
+            </div>
+            <div className="form-group col-md mt-2">
+              <div className="input-group">
+                <span className="input-group-text">
+                  <FontAwesomeIcon
+                    icon={faCircleUser}
+                    style={{ color: "#959DB2" }}
+                  />
+                </span>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter your username"
+                  name="userName"
+                  id="userName"
+                  value={formData.userName}
+                  onChange={handleChange}
+                />
+              </div>
+              <span
+                className="errorMessage"
+                style={{ float: "left", height: "20px" }}
+              >
+                {errors.userName}
+              </span>
+            </div>
+
+            <div className="form-group col-md mt-2">
+              <div className="input-group">
+                <span className="input-group-text">
+                  <img src={Lock} alt="" height={"16px"} color="#959DB2" />
+                </span>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  className="form-control"
+                  placeholder="Enter your password"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+              </div>
+              <span
+                className="errorMessage"
+                style={{ float: "left", height: "20px" }}
+              >
+                {errors.password}
+              </span>
+            </div>
+            <div className="form-group col-md mt-2">
+              <div className="input-group">
+                <span className="input-group-text">
+                  <img src={Clock} alt="" height={"16px"} color="#959DB2" />
+                </span>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  className="form-control"
+                  placeholder="Enter your confirm password"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                />
+              </div>
+              <span
+                className="errorMessage"
+                style={{ float: "left", height: "20px" }}
+              >
+                {errors.confirmPassword}
+              </span>
+            </div>
+            <div className="col-md btn-div">
+              <a
+                className="mt-4"
+                href="./"
+                target=""
+                style={{
+                  float: "left",
+                  textDecoration: "none",
+                  color: "#6988AF",
+                }}
+              >
+                Already a member? Sign in
+              </a>
               <button
-                className="btn mx-4"
+                className="btn text-white fs-5 btn-pri mt-xxl-3"
                 type="submit"
                 style={{
-                  backgroundColor: "#5742A0",
-                  color: "white",
-                  padding: "10px 35px",
+                  float: "right",
+                  padding: "10px 45px",
                   borderRadius: "25px",
                 }}
               >
-                Login
+                Sign up
               </button>
             </div>
-            <div
-              className="container mt-5"
-              style={{ borderBlockStartColor: "White" }}
-            >
-              <div className="mt-5 text-white">
-                <p className="text-white">
-                  {" "}
-                  ---------------Sign up with---------------
-                </p>
-              </div>
-              <span className="text-white fs-4">
-                <FontAwesomeIcon icon={faGooglePlus} />
-              </span>
-              <span className="mx-3 text-white fs-4">
-                <FontAwesomeIcon icon={faFacebook} />
-              </span>
-              <span className="text-white fs-4">
-                <FontAwesomeIcon icon={faTwitter} />
-              </span>
-            </div>
-          </div>
+          </form>
         </div>
-        <form
-          action=""
-          className="col-md-6 pb-5 px-5"
-          onSubmit={handleSubmit}
-          style={{
-            backgroundColor: "#B6D9EC",
-            borderTopLeftRadius: "15px",
-            borderTopRightRadius: "15px",
-          }}
-        >
-          <div className="col-md">
-            <h1 className="" style={{ float: "left", color: "#6988AF" }}>
-              Register
-            </h1>
-            <p className="" style={{ float: "left", color: "#6988AF" }}>
-              Create your account.It's free and only take a minute
-            </p>
-          </div>
-          <div className="form-group col-md">
-            <div className="input-group">
-              <span className="input-group-text">
-                <FontAwesomeIcon icon={faCircleUser} color="grey" />
-              </span>
-              <input
-                className="form-control"
-                type="text"
-                name="firstName"
-                placeholder="Enter Your First Name"
-                id="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-              />
-            </div>
-            <p className="errorMessage" style={{ float: "left" }}>
-              {errors.firstName}
-            </p>
-          </div>
-          <div className="form-group col-md mt-2">
-            <div className="input-group">
-              <span className="input-group-text">
-                <FontAwesomeIcon icon={faCircleUser} color="grey" />
-              </span>
-              <input
-                className="form-control"
-                placeholder="Enter your Last name"
-                type="text"
-                id="lastName"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-              />
-            </div>
-            <p className="errorMessage" style={{ float: "left" }}>
-              {errors.lastName}
-            </p>
-          </div>
-          <div className="form-floating col-md mt-2">
-            <div className="input-group">
-              <span className="input-group-text">
-                <FontAwesomeIcon icon={faEnvelope} />
-              </span>
-              <input
-                className="form-control"
-                type="email"
-                name="email"
-                id="email"
-                placeholder="name@gmail.com"
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </div>
-            <span className="errorMessage" style={{ float: "left" }}>
-              {errors.email}
-            </span>
-          </div>
-          <div className="form-group col-md mt-2">
-            <div className="input-group">
-              <span className="input-group-text">
-                <FontAwesomeIcon icon={faCircleUser} />
-              </span>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter your username"
-                name="userName"
-                id="userName"
-                value={formData.userName}
-                onChange={handleChange}
-              />
-            </div>
-            <span
-              className="errorMessage"
-              style={{ float: "left", height: "20px" }}
-            >
-              {errors.userName}
-            </span>
-          </div>
-
-          <div className="form-group col-md mt-2">
-            <div className="input-group">
-              <span className="input-group-text">
-                <FontAwesomeIcon icon={faLock} />
-              </span>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                className="form-control"
-                placeholder="Enter your password"
-                value={formData.password}
-                onChange={handleChange}
-              />
-            </div>
-            <span
-              className="errorMessage"
-              style={{ float: "left", height: "20px" }}
-            >
-              {errors.password}
-            </span>
-          </div>
-          <div className="form-group col-md mt-2">
-            <div className="input-group">
-              <span className="input-group-text">
-                <FontAwesomeIcon icon={faLock} />
-              </span>
-              <input
-                type="password"
-                name="confirmPassword"
-                id="confirmPassword"
-                className="form-control"
-                placeholder="Enter your confirm password"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-              />
-            </div>
-            <span
-              className="errorMessage"
-              style={{ float: "left", height: "20px" }}
-            >
-              {errors.confirmPassword}
-            </span>
-          </div>
-          <div className="col-md mt-5">
-            <a
-              className="mt-3"
-              href="./"
-              target=""
-              style={{
-                float: "left",
-                textDecoration: "none",
-                color: "#6988AF",
-              }}
-            >
-              Already a member? SignIn
-            </a>
-            <button
-              className="btn text-white fs-5 btn-pri"
-              type="submit"
-              style={{
-                backgroundColor: "#5742A0",
-                float: "right",
-                padding: "10px 45px",
-                borderRadius: "25px",
-              }}
-            >
-              Sign up
-            </button>
-          </div>
-        </form>
       </div>
     </div>
   );
