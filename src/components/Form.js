@@ -27,6 +27,16 @@ const Form = () => {
     password: "",
     confirmPassword: "",
   });
+  const handleBlur = (event) => {
+    const {name,value} = event.target;
+    let validateErrors = {...errors};
+    if(!value){
+      validateErrors[name] = `${name.charAt(0).toUpperCase() + name.slice(1)} is required `;
+    }else{
+      validateErrors[name] = "";
+    }
+    setErrors(validateErrors);
+  }
   const handleChange = (event) =>{
     const {name,value} = event.target;
     setFormData({...formData,[name]: value});
@@ -113,17 +123,17 @@ const Form = () => {
     }
   }
   return (
-    <div>
-      <div className="row justify-content-center align-items-center mt-5 mx-auto">
+    <div className='container'>
+      <div className="row justify-content-center align-items-center mt-lg-5 mt-md-3 mx-auto">
         <div
-          className="d-flex col-md-8 pt-5 px-4"
+          className="col-lg-10 col-xxl-8 co-md-8 d-flex pt-lg-5 pt-md-3 px-auto"
           style={{
             boxShadow: "5px 5px 5px ",
-            backgroundColor: "#3087D6",
+            backgroundColor: "#2D89D4",
             borderRadius: "15px",
           }}
         >
-          <div className="col-md-6 p-5" style={{ backgroundColor: "#3087D6" }}>
+          <div className="col-lg-6 col-md-6 p-5" style={{ backgroundColor: "#2D89D4" }}>
             <div className="container mt-5">
               <img src={Logo} alt="" height={"50px"} />
               <h6 className="text-white">STUDIO</h6>
@@ -132,16 +142,15 @@ const Form = () => {
               <p className="text-white mt-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing.
               </p>
-              <div className=' justify-items-center'>
+              <div className=" justify-items-center">
                 <button
-                  className="btn btn-reg mb-3"
+                  className="btn btn-reg me-3 ms-md-3 mt-md-3 mb-md-3"
                   type="button"
                   style={{
                     color: "white",
                     borderColor: "#68B2E6",
                     padding: "10px 25px",
                     borderRadius: "25px",
-      
                   }}
                 >
                   Register
@@ -164,7 +173,7 @@ const Form = () => {
                 style={{ borderBlockStartColor: "White" }}
               >
                 <div className="mt-5 text-white">
-                  <p className="text-white"> ----------Sign up with---------</p>
+                  <p className="text-white"> ----Sign up with----</p>
                 </div>
                 <span className="text-white fs-4">
                   <FontAwesomeIcon icon={faGooglePlus} />
@@ -180,7 +189,7 @@ const Form = () => {
           </div>
           <form
             action=""
-            className="col-md-6 pb-5 pb-md-4 px-3"
+            className="col-lg-6 col-md-6 pb-5 pb-md-4 px-md-3 px-sm-0"
             onSubmit={handleSubmit}
             style={{
               backgroundColor: "#B6D9EC",
@@ -209,6 +218,7 @@ const Form = () => {
                   id="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
               </div>
               <p className="errorMessage" style={{ float: "left" }}>
@@ -228,6 +238,7 @@ const Form = () => {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
               </div>
               <p className="errorMessage" style={{ float: "left" }}>
@@ -250,6 +261,7 @@ const Form = () => {
                   placeholder="name@gmail.com"
                   value={formData.email}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
               </div>
               <span className="errorMessage" style={{ float: "left" }}>
@@ -272,6 +284,7 @@ const Form = () => {
                   id="userName"
                   value={formData.userName}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
               </div>
               <span
@@ -295,6 +308,7 @@ const Form = () => {
                   placeholder="Enter your password"
                   value={formData.password}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
               </div>
               <span
@@ -317,6 +331,7 @@ const Form = () => {
                   placeholder="Enter your confirm password"
                   value={formData.confirmPassword}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
               </div>
               <span
@@ -326,21 +341,22 @@ const Form = () => {
                 {errors.confirmPassword}
               </span>
             </div>
-            <div className="col-md btn-div">
+            <div className="d-flex col-md btn-div">
               <a
-                className="mt-4"
+                className="me-xxl-5 me-lg-4"
                 href="./"
                 target=""
                 style={{
                   float: "left",
                   textDecoration: "none",
                   color: "#6988AF",
+                  marginTop : "30px"
                 }}
               >
                 Already a member? Sign in
               </a>
               <button
-                className="btn text-white fs-5 btn-pri mt-xxl-3"
+                className="btn text-white fs-5 btn-pri mt-xxl-3 px-4 ms-xxl-4"
                 type="submit"
                 style={{
                   float: "right",

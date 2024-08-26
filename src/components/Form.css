@@ -25,67 +25,27 @@
 .btn-pri{
   background: linear-gradient(to top, #5348A4,#70198A );
 }
-.row{
-  width: 1525px !important;
-}
-@media screen and (max-width : 1440px) {
-  .row{
-    width: 1400px !important; 
-    padding-left: 0px !important;
-    padding-top: 180px !important;
-    
-  }
-  .col-md-8{
-    padding-left: 0px !important;
-    border-bottom-left-radius: 15px !important;
-  }
-  .mt-5{
-    margin-top: 20px !important;
-  }
-  .btn-pri{
-    margin-top: 10px !important;
-  }
-}
 @media screen and (max-width : 1024px) {
-  .row{
-    width: 1020px !important; 
-    padding-left: 0px !important;
-    padding-top: 50px !important;
+  a{
+    margin-top:10px !important;
+    margin-right: 0px !important;
   }
-  .col-md-8{
-    padding-left: 0px !important;
-    border-bottom-left-radius: 15px !important;
-  }
-  .mt-5{
+  .btn-div{
     margin-top: 20px !important;
   }
-  .btn-pri{
-    margin-top: 10px !important;
+}
+@media screen and (max-width : 768px) {
+  p{
+    font-size: 15px !important;
+    margin-bottom: 0px !important;
+  }
+  a{
+    font-size: 15px !important;
+    margin-right: 5px !important;
   }
 }
-@media screen and (max-width : 800px) {
-  .row{
-    margin-top: 0px !important;
-    padding-top: 10px !important;
-    height: 650px !important;
-    width: 765px !important;
-  }
-  .errorMessage{
-    display: block !important;
-    position: absolute !important;
-    float:  left !important;
-    width: max-content !important;
-  }
-  .btn-reg{
-    margin-bottom: 10px !important;
-  }
-}
-
 @media screen and (max-width : 500px) {
-  .row{
-    width: 8cm !important;
-    /* margin-left: 40px !important; */
-  }
+  
   .pt-5{
     padding-top: 10px !important;
   }
@@ -117,6 +77,11 @@
   .btn-pri{
     float:  left !important;
     margin-top: 10px !important;
-    padding: 10px 80px !important;
+    padding: 10px 70px !important;
+  }
+  .col-md-6{
+    margin-left: 0px !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
   }
 }
