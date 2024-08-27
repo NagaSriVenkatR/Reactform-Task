@@ -123,7 +123,7 @@ const Form = () => {
     }
   }
   return (
-    <div className='container'>
+    <div className="container">
       <div className="row justify-content-center align-items-center mt-lg-5 mt-md-3 mx-auto">
         <div
           className="col-lg-10 col-xxl-8 co-md-8 d-flex pt-lg-5 pt-md-3 px-auto"
@@ -133,7 +133,10 @@ const Form = () => {
             borderRadius: "15px",
           }}
         >
-          <div className="col-lg-6 col-md-6 p-5" style={{ backgroundColor: "#2D89D4" }}>
+          <div
+            className="col-lg-6 col-md-6 p-5"
+            style={{ backgroundColor: "#2D89D4" }}
+          >
             <div className="container mt-5">
               <img src={Logo} alt="" height={"50px"} />
               <h6 className="text-white">STUDIO</h6>
@@ -142,29 +145,20 @@ const Form = () => {
               <p className="text-white mt-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing.
               </p>
-              <div className=" justify-items-center">
+              <div className="d-flex justify-content-center">
                 <button
                   className="btn btn-reg me-3 ms-md-3 mt-md-3 mb-md-3"
                   type="button"
                   style={{
                     color: "white",
                     borderColor: "#68B2E6",
-                    padding: "10px 25px",
+                    padding: "5px 25px",
                     borderRadius: "25px",
                   }}
                 >
                   Register
                 </button>
-                <button
-                  className="btn mx-auto btn-sig"
-                  type="submit"
-                  style={{
-                    backgroundColor: "#5742A0",
-                    color: "white",
-                    padding: "10px 35px",
-                    borderRadius: "25px",
-                  }}
-                >
+                <button className="btn btn-pri mb-md-3 text-white">
                   Login
                 </button>
               </div>
@@ -173,7 +167,7 @@ const Form = () => {
                 style={{ borderBlockStartColor: "White" }}
               >
                 <div className="mt-5 text-white">
-                  <p className="text-white"> ----Sign up with----</p>
+                  <p className="text-white"> --------------Sign up with------------</p>
                 </div>
                 <span className="text-white fs-4">
                   <FontAwesomeIcon icon={faGooglePlus} />
@@ -197,12 +191,19 @@ const Form = () => {
               borderTopRightRadius: "15px",
             }}
           >
-            <div className="col-md">
-              <h1 className="" style={{ float: "left", color: "#6988AF" }}>
+            <div className="col-md row text-start">
+              <h1
+                className="d-none d-md-block ms-2"
+                style={{ float: "left", color: "#6988AF" }}
+              >
                 Register
               </h1>
-              <p className="" style={{ float: "left", color: "#6988AF" }}>
-                Create your account.It's free and only take a minute
+              <p className="" style={{ color: "#6988AF" }}>
+                Create your account.
+                <span className="para">It's free and only take a minute</span>
+              </p>
+              <p className="d-md-none" style={{ color: "#6988AF" }}>
+                It's free and only take a minute
               </p>
             </div>
             <div className="form-group col-md">
@@ -287,18 +288,13 @@ const Form = () => {
                   onBlur={handleBlur}
                 />
               </div>
-              <span
-                className="errorMessage"
-                style={{ float: "left", height: "20px" }}
-              >
-                {errors.userName}
-              </span>
+              <span className="errorMessage">{errors.userName}</span>
             </div>
 
             <div className="form-group col-md mt-2">
               <div className="input-group">
                 <span className="input-group-text">
-                  <img src={Lock} alt="" height={"16px"} color="#959DB2" />
+                  <img src={Lock} alt="" height={"24px"} color="#959DB2" />
                 </span>
                 <input
                   type="password"
@@ -311,17 +307,12 @@ const Form = () => {
                   onBlur={handleBlur}
                 />
               </div>
-              <span
-                className="errorMessage"
-                style={{ float: "left", height: "20px" }}
-              >
-                {errors.password}
-              </span>
+              <span className="errorMessage">{errors.password}</span>
             </div>
             <div className="form-group col-md mt-2">
               <div className="input-group">
                 <span className="input-group-text">
-                  <img src={Clock} alt="" height={"16px"} color="#959DB2" />
+                  <img src={Clock} alt="" height={"24px"} color="#959DB2" />
                 </span>
                 <input
                   type="password"
@@ -334,38 +325,42 @@ const Form = () => {
                   onBlur={handleBlur}
                 />
               </div>
-              <span
-                className="errorMessage"
-                style={{ float: "left", height: "20px" }}
-              >
-                {errors.confirmPassword}
-              </span>
+              <span className="errorMessage">{errors.confirmPassword}</span>
             </div>
-            <div className="d-flex col-md btn-div">
+            <div className="d-flex col-md btn-div mt-4">
               <a
-                className="me-xxl-5 me-lg-4"
+                className="mt-3 d-none d-md-block"
                 href="./"
                 target=""
                 style={{
                   float: "left",
                   textDecoration: "none",
                   color: "#6988AF",
-                  marginTop : "30px"
                 }}
               >
                 Already a member? Sign in
               </a>
               <button
-                className="btn text-white fs-5 btn-pri mt-xxl-3 px-4 ms-xxl-4"
+                className="btn text-white  btn-sign "
                 type="submit"
                 style={{
-                  float: "right",
-                  padding: "10px 45px",
                   borderRadius: "25px",
                 }}
               >
                 Sign up
               </button>
+              <a
+                className="d-md-none"
+                href="./"
+                target=""
+                style={{
+                  float: "left",
+                  textDecoration: "none",
+                  color: "#6988AF",
+                }}
+              >
+                Already a member? Sign in
+              </a>
             </div>
           </form>
         </div>

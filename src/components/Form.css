@@ -2,17 +2,24 @@
   /* margin-bottom: 40px !important; */
   position: absolute !important;
   display: block !important;
-  font-size: 14px !important;
+  font-size: 11px !important;
   color: red; /* This replaces the `text-danger` class */
 }
 .form-control{
-  margin-top: 15px !important;
+  margin-top: 8px !important;
   height: 40px !important;
   border-top-right-radius: 20px !important;
   border-bottom-right-radius: 20px !important;
 }
+.btn-div{
+  justify-content: space-between !important;
+}
+p{
+  font-size: 12px !important;
+}
 .input-group-text{
-  margin-top: 15px !important;
+  font-size: 25px !important;
+  margin-top: 8px !important;
   border-top-left-radius: 20px !important;
   border-right: none !important ;
   border-bottom-left-radius: 20px !important;
@@ -24,11 +31,23 @@
 }
 .btn-pri{
   background: linear-gradient(to top, #5348A4,#70198A );
+  margin-top: 20px !important;
+  border-radius: 25px !important;
+  padding: 5px 35px !important;
+  height: 40px !important;
+}
+.btn-sign{
+  padding: 5px 50px !important;
+  background: linear-gradient(to top, #5348A4,#70198A );
 }
 @media screen and (max-width : 1024px) {
   a{
     margin-top:10px !important;
     margin-right: 0px !important;
+    font-size: 11px !important;
+  }
+  .btn-sign{
+    margin-top: 5px !important;
   }
   .btn-div{
     margin-top: 20px !important;
@@ -36,16 +55,22 @@
 }
 @media screen and (max-width : 768px) {
   p{
-    font-size: 15px !important;
+    font-size: 12px !important;
     margin-bottom: 0px !important;
   }
   a{
-    font-size: 15px !important;
+    font-size: 11px !important;
     margin-right: 5px !important;
   }
 }
 @media screen and (max-width : 500px) {
-  
+  p{
+    text-align: center;
+    font-size: 15px !important;
+  }
+  .para{
+    display: none ;
+  }
   .pt-5{
     padding-top: 10px !important;
   }
@@ -61,9 +86,7 @@
     display: flex !important;
     flex-direction: column !important;
   }
-  .col-md-8{
-    width: 10cm !important;
-  }
+  
   .form-control{
     height: 40px !important;
   }
@@ -71,17 +94,13 @@
     margin-top: 20px !important;
   }
   .px-5{
-    padding-left: 10px !important ;
-    padding-right: 10px !important;
+    padding-left: 0px !important ;
+    padding-right: 0px !important;
   }
-  .btn-pri{
-    float:  left !important;
-    margin-top: 10px !important;
-    padding: 10px 70px !important;
-  }
+  
   .col-md-6{
     margin-left: 0px !important;
-    padding-left: 30px !important;
-    padding-right: 30px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 }
